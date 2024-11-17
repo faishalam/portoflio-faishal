@@ -10,7 +10,7 @@ import { InfiniteMovingCards } from "../layouts/InfiniteMovingCards";
 export function DotBackgroundDemo() {
   return (
     <div className="w-full flex-col bg-black bg-dot-white/[0.2] relative flex items-center justify-center">
-      <div className="flex flex-col lg:flex-row w-full justify-center items-center gap-10 max-w-7xl mt-20 px-8 sm:px-20">
+      <div className="flex flex-col lg:flex-row w-full justify-center items-center gap-10 max-w-7xl mt-20">
         <div className="flex flex-col justify-start items-start max-w-full w-full gap-20 ">
           <TextRevealCardComponents />
           <CompareComponents />

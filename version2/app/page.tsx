@@ -4,6 +4,7 @@ import { BackgroundBeams } from "@/components/layouts/BackgroundBeams";
 import { FlipWords } from "@/components/layouts/FlipWord";
 import { TimelineDemo } from "@/components/layouts/TimelineDemo";
 import { WavyBackground } from "@/components/layouts/WavyBackground";
+import Paragraph from "@/components/Paragraph";
 import { BackgroundBeamsDemo } from "@/components/templates/BackgroundBeamsComponents";
 import { BackgroundGradient } from "@/components/templates/BackgroundGradient";
 import CardPinComponents from "@/components/templates/CardPinComponents";
@@ -37,11 +38,27 @@ export default function Home() {
         </WavyBackground>
       </div>
 
+      <div className="max-w-7xl mx-auto w-full h-screen flex">
+        <div className="max-w-full w-full flex">
+          <div className="max-w-full w-full flex flex-col gap-10 justify-center items-start">
+            <Paragraph
+              value={`As a recent graduate from the Full Stack JavaScript Immersive program at Hacktiv8 Indonesia, I bring a strong skill set in web and mobile development, with expertise in React JS, Next JS, TypeScript, Redux, React Query, Node, Express, Sequelize, PostgreSQL, Mongo and etc. Alongside my formal education, I have practical experience as a Frontend Developer, where I contributed to build projects by developing responsive, user-friendly interfaces and optimizing performance. I am eager to apply my skills to innovative projects, staying updated with the latest technologies, and growing as a Full Stack Developer to create efficient and scalable applications.`}
+              firstOffset="start 0.8" // Mulai muncul lebih awal
+              secondOffset="start 0.25" // Men
+            />
+          </div>
+
+          <div className="max-w-full w-full flex justify-center items-center">
+            <p>disini foto</p>
+          </div>
+        </div>
+      </div>
+
       <div className="max-w-full w-full mx-auto gap-10 flex justify-center items-center">
         <DotBackgroundDemo />
       </div>
 
-      <div className="max-w-full w-full min-h-screen">
+      {/* <div className="max-w-full w-full min-h-screen">
         <BackgroundBeamsDemo />
       </div>
 
@@ -50,7 +67,7 @@ export default function Home() {
           <StickyScrollComponents />
         </div>
         <GlobeDemo />
-      </div>
+      </div> */}
     </>
   );
 }
