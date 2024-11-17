@@ -7,12 +7,12 @@ import { TimelineDemo } from "../layouts/TimelineDemo";
 import { TextGenerateEffect } from "./TextGenerateEffect";
 import { CardHoverComponents } from "./CardHoverComponents";
 import { InfiniteMovingCards } from "../layouts/InfiniteMovingCards";
-import Paragraph from "../Paragraph";
+import Paragraph, { OffsetType } from "../Paragraph";
 
 export function DotBackgroundDemo() {
   const [offsets, setOffsets] = useState({
-    firstOffset: "start 0.9", // Default offset
-    secondOffset: "start 0.20", // Default offset
+    firstOffset: "start 0.9" as OffsetType, //
+    secondOffset: "start 0.20" as OffsetType, 
   });
 
   // Menggunakan useEffect untuk mendeteksi perubahan ukuran layar
@@ -44,13 +44,10 @@ export function DotBackgroundDemo() {
       }
     };
 
-    // Mendengarkan resize
     window.addEventListener("resize", handleResize);
 
-    // Memanggil handler saat pertama kali component dirender
     handleResize();
 
-    // Membersihkan event listener saat component dibersihkan
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   return (

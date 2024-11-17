@@ -2,7 +2,7 @@
 import { useScroll, motion, useTransform } from "framer-motion";
 import { useEffect, useRef } from "react";
 
-type OffsetType =
+export type OffsetType =
   | "start 0"
   | "start 0.1"
   | "start 0.25"
@@ -15,6 +15,7 @@ type OffsetType =
   | `${number} center`
   | `start ${number}`
   | `end ${number}`;
+  
 
 interface ParagraphProps {
   value: string;
