@@ -40,8 +40,8 @@ export default function Paragraph({
   }, []);
 
   return (
-    <div className="max-w-full w-full px-14 py-10 bg-neutral-800 rounded-xl">
-      <p className="max-w-full text-2xl space-y-2" ref={element}>
+    // <div className="max-w-full w-full px-14 py-12 bg-neutral-800 rounded-xl">
+      <p className="max-w-full text-md md:text-3xl space-y-4 font-medium" ref={element}>
         {words.map((word, i) => {
           const start = i / words.length;
           const end = start + 1 / words.length;
@@ -52,7 +52,7 @@ export default function Paragraph({
           );
         })}
       </p>
-    </div>
+    // </div>
   );
 }
 

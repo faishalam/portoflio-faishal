@@ -17,6 +17,7 @@ import { MovingCardsComponents } from "@/components/templates/MovingCardsCompone
 import { StickyScrollComponents } from "@/components/templates/StickyScrollComponents";
 import { TextRevealCardComponents } from "@/components/templates/TextReveralCardComponents";
 import { WobbleCardComponents } from "@/components/templates/WobbleCardComponents";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const words = [
@@ -24,6 +25,8 @@ export default function Home() {
     "Frontend Engineer",
     "Full Stack Engineer",
   ];
+
+ 
 
   return (
     <>
@@ -38,21 +41,7 @@ export default function Home() {
         </WavyBackground>
       </div>
 
-      <div className="max-w-7xl mx-auto w-full h-screen flex">
-        <div className="max-w-full w-full flex">
-          <div className="max-w-full w-full flex flex-col gap-10 justify-center items-start">
-            <Paragraph
-              value={`As a recent graduate from the Full Stack JavaScript Immersive program at Hacktiv8 Indonesia, I bring a strong skill set in web and mobile development, with expertise in React JS, Next JS, TypeScript, Redux, React Query, Node, Express, Sequelize, PostgreSQL, Mongo and etc. Alongside my formal education, I have practical experience as a Frontend Developer, where I contributed to build projects by developing responsive, user-friendly interfaces and optimizing performance. I am eager to apply my skills to innovative projects, staying updated with the latest technologies, and growing as a Full Stack Developer to create efficient and scalable applications.`}
-              firstOffset="start 0.8" // Mulai muncul lebih awal
-              secondOffset="start 0.25" // Men
-            />
-          </div>
-
-          <div className="max-w-full w-full flex justify-center items-center">
-            <p>disini foto</p>
-          </div>
-        </div>
-      </div>
+   
 
       <div className="max-w-full w-full mx-auto gap-10 flex justify-center items-center">
         <DotBackgroundDemo />
@@ -60,14 +49,14 @@ export default function Home() {
 
       {/* <div className="max-w-full w-full min-h-screen">
         <BackgroundBeamsDemo />
-      </div>
+      </div> */}
 
       <div className="max-w-full w-full flex-col bg-black bg-dot-white/[0.2] relative flex items-center justify-center">
         <div className="max-w-7xl mt-20 w-full sm:h-full justify-center items-center mx-auto">
           <StickyScrollComponents />
         </div>
         <GlobeDemo />
-      </div> */}
+      </div>
     </>
   );
 }
