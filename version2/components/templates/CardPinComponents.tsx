@@ -22,7 +22,7 @@ export const projects = [
       "/javascript.svg",
       "/aws-white.svg",
     ],
-    link: "/ui.earth.com",
+    link: "/https://kpp-mining-exjr7pzne-faishals-projects-bab197b8.vercel.app/",
   },
   {
     id: 2,
@@ -41,14 +41,14 @@ export const projects = [
       "/aws-white.svg",
       "/rails.svg",
     ],
-    link: "/ui.yoom.com",
+    link: "/https://chat-app-fullstack-mu.vercel.app/login",
   },
   {
     id: 3,
     title: "Weather App - Individual Project",
     des: "A full stack weather app and forecasting app using Next JS",
     years: "October 2024",
-    position: "Full Stack Engineer",
+    position: "Frontend Engineer",
     firstImage: "/images/weather-dark.png",
     secondImage: "/images/weather-white.png",
     iconLists: [
@@ -59,7 +59,7 @@ export const projects = [
       "/javascript.svg",
       "/aws-white.svg",
     ],
-    link: "/ui.aiimg.com",
+    link: "/https://weather-app-dun-sigma-55.vercel.app/",
   },
   {
     id: 4,
@@ -71,7 +71,7 @@ export const projects = [
     secondImage: "/images/fashion-list.png",
     img: "/p4.svg",
     iconLists: ["/react.svg", "/tail.svg", "/javascript.svg"],
-    link: "/ui.apple.com",
+    link: "https://drive.google.com/file/d/1CEzk4PqUGw_PoHGG0psAmaLJvZa5fU8N/view",
   },
 ];
 
