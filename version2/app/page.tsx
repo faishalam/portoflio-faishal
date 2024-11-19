@@ -26,7 +26,6 @@ export default function Home() {
     "Full Stack Engineer",
   ];
 
-
   return (
     <>
       <div className="max-w-full w-full h-screen">
@@ -52,7 +51,7 @@ export default function Home() {
         <div className="max-w-7xl mt-20 w-full sm:h-full justify-center items-center mx-auto">
           <StickyScrollComponents />
         </div>
-        <GlobeDemo /> 
+        <div><GlobeDemo /></div>
       </div>
     </>
   );

@@ -141,7 +141,7 @@ const content = [
                   secondImage="/images/kpp-dashboard.png"
                   // firstImageClassName="object-cover object-left-top"
                   // secondImageClassname="object-cover object-left-top"
-                  className="h-[250px]"
+                  className="h-[250px] w-[]"
                   slideMode="hover"
                   autoplay={true}
                 />
