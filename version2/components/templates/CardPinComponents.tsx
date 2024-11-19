@@ -83,10 +83,10 @@ export default function CardPinComponents() {
           Recent Project
         </h1>
       </div>
-      <div className="max-w-full w-full flex h-full gap-10 sm:gap-16 overflow-auto p-10">
+      <div className="max-w-full w-full flex h-full gap-10 sm:gap-16 overflow-auto p-10 space-x-56 md:space-x-0">
         {projects.map((item) => (
           <div
-            className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[30vw] space-y-10"
+            className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[30vw] space-y-10 "
             key={item.id}
           >
             <PinContainer
@@ -102,7 +102,7 @@ export default function CardPinComponents() {
                   <Compare
                     firstImage={item.firstImage}
                     secondImage={item.secondImage}
-                    className="h-[250px]"
+                    className="w-full h-[200px] md:h-[250px]"
                     slideMode="hover"
                     autoplay={true}
                   />

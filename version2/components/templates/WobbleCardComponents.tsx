@@ -19,13 +19,7 @@ export function WobbleCardComponents() {
             easy to extend.
           </p>
         </div>
-        {/* <Image
-          src="/linear.webp"
-          width={500}
-          height={500}
-          alt="linear demo image"
-          className="absolute -right-4 lg:-right-[40%] grayscale filter -bottom-10 object-contain rounded-2xl"
-        /> */}
+
       </WobbleCard>
 
       <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-blue-900 min-h-[500px] lg:min-h-[600px] xl:min-h-[300px]">
@@ -37,13 +31,6 @@ export function WobbleCardComponents() {
           I stay up-to-date with modern technology stacks, using the latest frameworks, tools, and practices to build efficient, high-performance applications. 
           </p>
         </div>
-        <Image
-          src="/linear.webp"
-          width={500}
-          height={500}
-          alt="linear demo image"
-          className="absolute -right-10 md:-right-[40%] lg:-right-[20%] -bottom-10 object-contain rounded-2xl"
-        />
       </WobbleCard>
     </div>
   );

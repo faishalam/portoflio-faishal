@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useEffect, useState } from "react";
 import { TextRevealCardComponents } from "./TextReveralCardComponents";
 import { CompareComponents } from "./CompareComponents";
@@ -12,7 +12,7 @@ import Paragraph, { OffsetType } from "../Paragraph";
 export function DotBackgroundDemo() {
   const [offsets, setOffsets] = useState({
     firstOffset: "start 0.9" as OffsetType, //
-    secondOffset: "start 0.20" as OffsetType, 
+    secondOffset: "start 0.20" as OffsetType,
   });
 
   // Menggunakan useEffect untuk mendeteksi perubahan ukuran layar
@@ -38,8 +38,8 @@ export function DotBackgroundDemo() {
         });
       } else {
         setOffsets({
-          firstOffset: "start 0.8",
-          secondOffset: "start 0.2",
+          firstOffset: "start 0.5",
+          secondOffset: "start 0.04",
         });
       }
     };
@@ -52,7 +52,7 @@ export function DotBackgroundDemo() {
   }, []);
   return (
     <div className="w-full flex-col bg-black bg-dot-white/[0.2] relative flex items-center justify-center">
-      <div className="max-w-7xl mx-auto w-full h-full md:h-screen">
+      <div className="max-w-7xl mx-auto w-full h-full md:h-screen flex justify-center items-center">
         <div className="max-w-full w-full flex flex-col px-10 md:px-0 justify-center items-center">
           <div className="text-4xl md:text-4xl lg:text-5xl flex flex-col w-full font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 mt-20 mb-20">
             <p>About Me</p>
@@ -66,20 +66,22 @@ export function DotBackgroundDemo() {
       </div>
 
       <div className="flex flex-col lg:flex-row w-full justify-center items-center gap-10 max-w-7xl mt-20 h-full md:h-screen px-10 md:px-0">
-        <div className="flex flex-col justify-start items-start max-w-full w-full gap-20 ">
+        <div className="flex flex-col justify-start items-start max-w-full w-full md:gap-20 sm:gap-10">
           <TextRevealCardComponents />
           <CompareComponents />
         </div>
-        <WobbleCardComponents />
+        {/* <div className="max-w-full w-full min-h-screen"> */}
+          <WobbleCardComponents />
+        {/* </div> */}
       </div>
 
-      <div className="md:h-full h-screen">
+      <div className="max-w-full w-full md:h-full h-full">
         <TimelineDemo />
       </div>
 
-      <div className="h-screen max-w-full rounded-md flex flex-col antialiased items-center relative overflow-hidden">
-        <TextGenerateEffect words={"Skills & Tech Stack"} />
+      <div className="md:h-full h-screen max-w-full rounded-md flex flex-col antialiased items-center relative overflow-hidden">
         <div className="flex flex-col max-w-full w-full justify-center items-center gap-24">
+          <TextGenerateEffect words={"Skills & Tech Stack"} />
           <CardHoverComponents />
         </div>
         <div className="max-w-full w-full mt-20">

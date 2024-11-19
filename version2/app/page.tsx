@@ -26,7 +26,6 @@ export default function Home() {
     "Full Stack Engineer",
   ];
 
- 
 
   return (
     <>
@@ -41,8 +40,6 @@ export default function Home() {
         </WavyBackground>
       </div>
 
-   
-
       <div className="max-w-full w-full mx-auto gap-10 flex justify-center items-center">
         <DotBackgroundDemo />
       </div>
@@ -55,7 +52,7 @@ export default function Home() {
         <div className="max-w-7xl mt-20 w-full sm:h-full justify-center items-center mx-auto">
           <StickyScrollComponents />
         </div>
-        <GlobeDemo />
+        <GlobeDemo /> 
       </div>
     </>
   );
