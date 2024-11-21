@@ -5,7 +5,7 @@ import { WobbleCard } from "../layouts/WobbleCard";
 export function WobbleCardComponents() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-7xl mx-auto w-full">
-      <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-pink-800 min-h-[500px] lg:min-h-[600px] xl:min-h-[300px]">
+      <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-pink-800 min-h-[100px] lg:min-h-[600px] xl:min-h-[300px]">
         <div className="max-w-full">
           <h2 className="text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
             Best Practices
@@ -22,7 +22,7 @@ export function WobbleCardComponents() {
 
       </WobbleCard>
 
-      <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-blue-900 min-h-[500px] lg:min-h-[600px] xl:min-h-[300px]">
+      <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-blue-900 min-h-[100px] lg:min-h-[600px] xl:min-h-[300px]">
         <div className="max-w-full">
           <h2 className="max-w-sm md:max-w-full text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
             Tech Enthusiast

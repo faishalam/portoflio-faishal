@@ -415,7 +415,7 @@ export function GlobeDemo() {
             <p className="flex justify-center items-center text-4xl md:text-4xl lg:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 pb-10 mt-24 md:mt-10">
               Let's Work Together!
             </p>
-            <div className="flex flex-wrap md:flex-row gap-4">
+            <div className="flex md:flex-row flex-col gap-4">
               <HoverBorderGradientDemo
                 btnText="Linkedin"
                 link="https://www.linkedin.com/in/faishalam/"

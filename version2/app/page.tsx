@@ -43,15 +43,11 @@ export default function Home() {
         <DotBackgroundDemo />
       </div>
 
-      <div className="max-w-full w-full min-h-screen">
-        <BackgroundBeamsDemo />
-      </div>
-
       <div className="max-w-full w-full flex-col bg-black bg-dot-white/[0.2] relative flex items-center justify-center">
         <div className="max-w-7xl mt-20 w-full sm:h-full justify-center items-center mx-auto">
           <StickyScrollComponents />
         </div>
-        <div><GlobeDemo /></div>
+        <div className="max-w-full w-full"><GlobeDemo /></div>
       </div>
     </>
   );

@@ -8,6 +8,7 @@ import { TextGenerateEffect } from "./TextGenerateEffect";
 import { CardHoverComponents } from "./CardHoverComponents";
 import { InfiniteMovingCards } from "../layouts/InfiniteMovingCards";
 import Paragraph, { OffsetType } from "../Paragraph";
+import CardPinComponents from "./CardPinComponents";
 
 export function DotBackgroundDemo() {
   const [offsets, setOffsets] = useState({
@@ -71,7 +72,7 @@ export function DotBackgroundDemo() {
           <CompareComponents />
         </div>
         {/* <div className="max-w-full w-full min-h-screen"> */}
-          <WobbleCardComponents />
+        <WobbleCardComponents />
         {/* </div> */}
       </div>
 
@@ -79,12 +80,12 @@ export function DotBackgroundDemo() {
         <TimelineDemo />
       </div>
 
-      <div className="md:h-full h-screen max-w-full rounded-md flex flex-col antialiased items-center relative overflow-hidden">
-        <div className="flex flex-col max-w-full w-full justify-center items-center gap-24">
+      <div className="md:h-screen h-full max-w-full rounded-md flex flex-col antialiased items-center relative overflow-hidden">
+        <div className="flex flex-col max-w-full w-full justify-center items-center py-10 md:gap-24">
           <TextGenerateEffect words={"Skills & Tech Stack"} />
           <CardHoverComponents />
         </div>
-        <div className="max-w-full w-full mt-20">
+        <div className="max-w-full w-full mb-10 md:mt-20">
           <InfiniteMovingCards
             items={testimonials}
             direction="left"
@@ -96,6 +97,10 @@ export function DotBackgroundDemo() {
             speed="fast"
           />
         </div>
+      </div>
+
+      <div className="max-w-full w-full md:h-screen h-full flex justify-center items-center">
+        <CardPinComponents />
       </div>
     </div>
   );
