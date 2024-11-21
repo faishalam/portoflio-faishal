@@ -41,10 +41,7 @@ export default function Home() {
 
       <div className="max-w-full w-full mx-auto gap-10 flex justify-center items-center">
         <DotBackgroundDemo />
-      </div>
-
-      
-       
+      </div>       
     </>
   );
 }

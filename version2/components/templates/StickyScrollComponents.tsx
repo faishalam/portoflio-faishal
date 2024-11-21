@@ -60,7 +60,7 @@ const content = [
         <div className="h-[40rem] max-w-full w-full flex items-center justify-center ">
           <PinContainer
             title="smart-test"
-            href="https://smart-test.nmwclinic.co.id/auth/login"
+            href="smart-test.nmwclinic.co.id/auth/login"
           >
             <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 max-w-full w-full">
               <div className="flex flex-1 rounded-lg w-full">
@@ -132,7 +132,7 @@ const content = [
         <div className="h-[40rem] max-w-full w-full flex items-center justify-center ">
           <PinContainer
             title="/KPP Monitoring"
-            href="https://kpp-mining-exjr7pzne-faishals-projects-bab197b8.vercel.app/"
+            href="kpp-mining-exjr7pzne-faishals-projects-bab197b8.vercel.app/"
           >
             <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 max-w-full w-full">
               <div className="flex flex-1 rounded-lg w-full">
