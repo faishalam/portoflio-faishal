@@ -28,6 +28,12 @@ export const PinContainer = ({
     setTransform("translate(-50%,-50%) rotateX(0deg) scale(1)");
   };
 
+  const normalizeHref = (href: string) => {
+    if (!href) return "#";
+    // If the href doesn't start with 'http' or 'https', add 'https://'
+    return href.startsWith("http") ? href : `https://${href}`;
+  };
+
   return (
     <Link
       className={cn(
@@ -36,7 +42,7 @@ export const PinContainer = ({
       )}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      href={href || "/"}
+      href={normalizeHref(href)} // Apply normalization here
     >
       <div
         style={{
@@ -73,7 +79,7 @@ export const PinPerspective = ({
           {/* Changed Link to div */}
           <div
             className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10 cursor-pointer"
-            onClick={() => window.open(href || "#", "_blank")} // Handle click manually
+            onClick={() => window.open(href || "#")} // Handle click manually
           >
             <span className="relative z-20 text-white text-xs font-bold inline-block py-0.5">
               {title}

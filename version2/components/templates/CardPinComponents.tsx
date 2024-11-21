@@ -4,6 +4,7 @@ import { FaLocationArrow } from "react-icons/fa6";
 import { CompareComponents } from "./CompareComponents";
 import { PinContainer } from "../layouts/CardPin";
 import { Compare } from "../layouts/Compare";
+import Link from "next/link";
 
 export const projects = [
   {
@@ -22,7 +23,7 @@ export const projects = [
       "/javascript.svg",
       "/aws-white.svg",
     ],
-    link: "/https://kpp-mining-exjr7pzne-faishals-projects-bab197b8.vercel.app/",
+    link: "/kpp-mining-exjr7pzne-faishals-projects-bab197b8.vercel.app/",
   },
   {
     id: 2,
@@ -41,7 +42,7 @@ export const projects = [
       "/aws-white.svg",
       "/rails.svg",
     ],
-    link: "/https://chat-app-fullstack-mu.vercel.app/login",
+    link: "/chat-app-fullstack-mu.vercel.app/login",
   },
   {
     id: 3,
@@ -59,7 +60,7 @@ export const projects = [
       "/javascript.svg",
       "/aws-white.svg",
     ],
-    link: "/https://weather-app-dun-sigma-55.vercel.app/",
+    link: "/weather-app-dun-sigma-55.vercel.app/",
   },
   {
     id: 4,
@@ -71,7 +72,7 @@ export const projects = [
     secondImage: "/images/fashion-list.png",
     img: "/p4.svg",
     iconLists: ["/react.svg", "/tail.svg", "/javascript.svg"],
-    link: "https://drive.google.com/file/d/1CEzk4PqUGw_PoHGG0psAmaLJvZa5fU8N/view",
+    link: "/drive.google.com/file/d/1CEzk4PqUGw_PoHGG0psAmaLJvZa5fU8N/view",
   },
 ];
 
@@ -89,10 +90,7 @@ export default function CardPinComponents() {
             className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[30vw] space-y-10 "
             key={item.id}
           >
-            <PinContainer
-              title={item.title}
-              href={item.link}
-            >
+            <PinContainer title={item.title} href={item.link}>
               <div className="relative flex items-center justify-center sm:w-96 w-[80vw] h-[20vh] lg:h-[30vh] mb-10">
                 <div
                   className="relative w-full h-full lg:rounded-3xl bg-white"

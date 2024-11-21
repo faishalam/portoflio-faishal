@@ -9,6 +9,8 @@ import { CardHoverComponents } from "./CardHoverComponents";
 import { InfiniteMovingCards } from "../layouts/InfiniteMovingCards";
 import Paragraph, { OffsetType } from "../Paragraph";
 import CardPinComponents from "./CardPinComponents";
+import { StickyScrollComponents } from "./StickyScrollComponents";
+import { GlobeDemo } from "./GlobeComponents";
 
 export function DotBackgroundDemo() {
   const [offsets, setOffsets] = useState({
@@ -71,9 +73,7 @@ export function DotBackgroundDemo() {
           <TextRevealCardComponents />
           <CompareComponents />
         </div>
-        {/* <div className="max-w-full w-full min-h-screen"> */}
         <WobbleCardComponents />
-        {/* </div> */}
       </div>
 
       <div className="max-w-full w-full md:h-full h-full">
@@ -101,6 +101,14 @@ export function DotBackgroundDemo() {
 
       <div className="max-w-full w-full md:h-screen h-full flex justify-center items-center">
         <CardPinComponents />
+      </div>
+
+      <div className="max-w-7xl mt-20 w-full sm:h-full justify-center items-center mx-auto">
+        <StickyScrollComponents />
+      </div>
+
+      <div className="max-w-full w-full h-screen">
+        <GlobeDemo />
       </div>
     </div>
   );

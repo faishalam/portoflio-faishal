@@ -439,7 +439,7 @@ export function GlobeDemo() {
             </div>
           </motion.div>
         </div>
-        <div className="max-w-full w-full z-10">
+        <div className="max-w-full w-full z-10 md:block hidden">
           <World data={sampleArcs} globeConfig={globeConfig} />
         </div>
       </div>
