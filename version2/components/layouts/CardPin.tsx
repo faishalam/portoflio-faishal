@@ -27,12 +27,7 @@ export const PinContainer = ({
   const onMouseLeave = () => {
     setTransform("translate(-50%,-50%) rotateX(0deg) scale(1)");
   };
-
-  const normalizeHref = (href: string) => {
-    if (!href) return "#";
-    // If the href doesn't start with 'http' or 'https', add 'https://'
-    return href.startsWith("http") ? href : `https://${href}`;
-  };
+  
 
   return (
     <Link
@@ -42,7 +37,7 @@ export const PinContainer = ({
       )}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      href={normalizeHref(href)} // Apply normalization here
+      href={`https://${href}` || "#"}
     >
       <div
         style={{
