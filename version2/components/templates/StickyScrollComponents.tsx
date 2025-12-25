@@ -9,6 +9,150 @@ import { StickyScroll } from "../layouts/StickyScroll";
 
 const content = [
   {
+    title: "PT POSDIGI Member of POS Indonesia",
+    position: "Software Engineer - Frontend",
+    years: "Agustus 2025 - Present",
+    description:
+      "As a Frontend Engineer at POSDIGI, I developed the eContract POSDIGI web application to manage digital contracts for corporate clients.",
+    points: (
+      <div className="max-w-full w-full flex flex-col gap-3 mt-10">
+        {[
+          {
+            label: "Technology",
+            value:
+              "Directed the transition from PHP to React JS, enhancing application scalability, maintainability and clean code.",
+          },
+          {
+            label: "UI Development",
+            value:
+              "Built modular, responsive UI components with React.js, ensuring a seamless and consistent user experience.",
+          },
+          {
+            label: "Collaboration",
+            value:
+              "Worked closely with backend developers and UI/UX designers to integrate APIs and meet design specifications.",
+          },
+          {
+            label: "Optimization",
+            value:
+              "Implemented performance enhancements, reducing load times and improving overall responsiveness.",
+          },
+          {
+            label: "Quality Assurance",
+            value:
+              "Conducted rigorous testing to ensure stability and reliability throughout the development process.",
+          },
+        ].map((field, index) => (
+          <div key={index} className="flex w-full max-w-fulll px-5">
+            <div className="w-full flex justify-between max-w-[140px] md:max-w-[150px]">
+              <span className="font-extrabold text-md">{field.label}</span>
+              <span className="font-extrabold text-md mr-2">:</span>
+            </div>
+            <div className="text-md max-w-full w-full">
+              <p className="max-w-full w-full">{field.value}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    ),
+    content: (
+      <div className="h-full max-w-full w-full flex items-center justify-center text-white">
+        <div className="h-[40rem] max-w-full w-full flex items-center justify-center ">
+          <PinContainer
+            title="smart-test"
+            href=""
+          >
+            <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 max-w-full w-full">
+              <div className="flex flex-1 rounded-lg w-full">
+                <Compare
+                  firstImage="/images/e-contract-login.png"
+                  secondImage="/images/e-contract-template.png"
+                  // firstImageClassName="object-cover object-left-top"
+                  // secondImageClassname="object-cover object-left-top"
+                  className="h-[250px]"
+                  slideMode="hover"
+                  autoplay={true}
+                />
+              </div>
+            </div>
+          </PinContainer>
+        </div>
+      </div>
+    ),
+  },
+  {
+    title: "PT Matra Teknologi",
+    position: "Software Engineer - Frontend",
+    years: "November 2024 - July 2025",
+    description:
+      "As a Frontend Engineer at Matra, I developed a web application for CKB Logistics to manage inquiries and quotations.",
+    points: (
+      <div className="max-w-full w-full flex flex-col gap-3 mt-10">
+        {[
+          {
+            label: "Technology",
+            value:
+              "Directed the transition from PHP to React JS, enhancing application scalability, maintainability and clean code.",
+          },
+          {
+            label: "UI Development",
+            value:
+              "Built modular, responsive UI components with React.js, ensuring a seamless and consistent user experience.",
+          },
+          {
+            label: "Collaboration",
+            value:
+              "Worked closely with backend developers and UI/UX designers to integrate APIs and meet design specifications.",
+          },
+          {
+            label: "Optimization",
+            value:
+              "Implemented performance enhancements, reducing load times and improving overall responsiveness.",
+          },
+          {
+            label: "Quality Assurance",
+            value:
+              "Conducted rigorous testing to ensure stability and reliability throughout the development process.",
+          },
+        ].map((field, index) => (
+          <div key={index} className="flex w-full max-w-fulll px-5">
+            <div className="w-full flex justify-between max-w-[140px] md:max-w-[150px]">
+              <span className="font-extrabold text-md">{field.label}</span>
+              <span className="font-extrabold text-md mr-2">:</span>
+            </div>
+            <div className="text-md max-w-full w-full">
+              <p className="max-w-full w-full">{field.value}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    ),
+    content: (
+      <div className="h-full max-w-full w-full flex items-center justify-center text-white">
+        <div className="h-[40rem] max-w-full w-full flex items-center justify-center ">
+          <PinContainer
+            title="smart-test"
+            href=""
+          >
+            <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 max-w-full w-full">
+              <div className="flex flex-1 rounded-lg w-full">
+                <Compare
+                  firstImage="/images/ckb-login.png"
+                  secondImage="/images/ckb-inquiry.png"
+                  // firstImageClassName="object-cover object-left-top"
+                  // secondImageClassname="object-cover object-left-top"
+                  className="h-[250px]"
+                  slideMode="hover"
+                  autoplay={true}
+                />
+              </div>
+            </div>
+          </PinContainer>
+        </div>
+      </div>
+    ),
+  },
+  {
     title: "PT Igyolini Indonesia (NMW Clinic)",
     position: "Software Engineer - Frontend",
     years: "May 2024 - October 2024",
@@ -60,7 +204,7 @@ const content = [
         <div className="h-[40rem] max-w-full w-full flex items-center justify-center ">
           <PinContainer
             title="smart-test"
-            href="smart-test.nmwclinic.co.id/auth/login"
+            href=""
           >
             <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 max-w-full w-full">
               <div className="flex flex-1 rounded-lg w-full">
@@ -162,6 +306,6 @@ export function StickyScrollComponents() {
       <div className="w-full max-w-full flex justify-center items-center">
         <StickyScroll content={content} />
       </div>
-      </>
+    </>
   );
 }

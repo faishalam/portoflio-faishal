@@ -52,26 +52,18 @@ export const StickyScroll = ({
     "linear-gradient(to bottom right, var(--orange-500), var(--yellow-500))",
   ];
 
-  // const [backgroundGradient, setBackgroundGradient] = useState(
-  //   linearGradients[0]
-  // );
-
-  // useEffect(() => {
-  //   setBackgroundGradient(linearGradients[activeCard % linearGradients.length]);
-  // }, [activeCard]);
-
   return (
     <motion.div
       animate={{
         backgroundColor: backgroundColors[activeCard % backgroundColors.length],
       }}
-      className="h-[50rem] max-w-full w-full overflow-y-auto flex flex-col md:flex-row justify-center relative space-x-10 rounded-md p-10"
+      className="h-auto md:h-[50rem] max-w-full w-full md:overflow-y-auto flex flex-col md:flex-row justify-center relative md:space-x-10 rounded-md p-10"
       ref={ref}
     >
       <div className="relative flex items-start px-4 max-w-full w-full">
-        <div className="max-w-full w-full h-screen">
+        <div className="max-w-full w-full md:h-screen">
           {content.map((item, index) => (
-            <div key={index} className="my-20 w-full">
+            <div key={index} className="my-10 md:my-20 w-full">
               <motion.h2
                 initial={{
                   opacity: 0,
@@ -79,7 +71,7 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-3xl font-bold text-slate-100"
+                className="text-2xl md:text-3xl font-bold text-slate-100"
               >
                 {item.title}
                 <p className="text-slate-300 text-sm mt-2">{item.position}</p>
@@ -97,16 +89,22 @@ export const StickyScroll = ({
                 {item.description}
                 {item.points}
               </motion.div>
+
+              {/* Content ditampilkan langsung di mobile */}
+              <div className="md:hidden mt-6 w-full rounded-md overflow-hidden">
+                {item.content ?? null}
+              </div>
             </div>
           ))}
           <div className="h-40" />
         </div>
       </div>
+
+      {/* Sticky content hanya muncul di desktop */}
       <div
-        // style={{ background: backgroundGradient }}
         className={cn(
-          "max-w-lg h-full w-full rounded-md sticky top-10 overflow-hidden items-start justify-start"
-          // contentClassName
+          "hidden md:block max-w-lg h-full w-full rounded-md sticky top-10 overflow-hidden",
+          contentClassName
         )}
       >
         {content[activeCard].content ?? null}
