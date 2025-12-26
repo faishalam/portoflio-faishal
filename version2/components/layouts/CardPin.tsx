@@ -37,7 +37,8 @@ export const PinContainer = ({
       )}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      href={href ? `https://${href}` : "#"}
+      href={href && href !== "#" ? `https://${href}` : "#"}
+      prefetch={href && href !== "#" ? true : false}
     >
       <div
         style={{
