@@ -37,7 +37,7 @@ export const PinContainer = ({
       )}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      href={`https://${href}` || "#"}
+      href={href ? `https://${href}` : "#"}
     >
       <div
         style={{

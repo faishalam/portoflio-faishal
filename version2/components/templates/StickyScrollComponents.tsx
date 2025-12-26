@@ -59,8 +59,8 @@ const content = [
       <div className="h-full max-w-full w-full flex items-center justify-center text-white">
         <div className="h-[40rem] max-w-full w-full flex items-center justify-center ">
           <PinContainer
-            title="smart-test"
-            href=""
+            title="PT POSDIGI - eContract"
+            href="#"
           >
             <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 max-w-full w-full">
               <div className="flex flex-1 rounded-lg w-full">
@@ -131,8 +131,8 @@ const content = [
       <div className="h-full max-w-full w-full flex items-center justify-center text-white">
         <div className="h-[40rem] max-w-full w-full flex items-center justify-center ">
           <PinContainer
-            title="smart-test"
-            href=""
+            title="Matra - CKB Logistics"
+            href="#"
           >
             <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 max-w-full w-full">
               <div className="flex flex-1 rounded-lg w-full">
@@ -203,8 +203,8 @@ const content = [
       <div className="h-full max-w-full w-full flex items-center justify-center text-white">
         <div className="h-[40rem] max-w-full w-full flex items-center justify-center ">
           <PinContainer
-            title="smart-test"
-            href=""
+            title="NMW - Medlib"
+            href="#"
           >
             <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 max-w-full w-full">
               <div className="flex flex-1 rounded-lg w-full">
@@ -276,7 +276,7 @@ const content = [
         <div className="h-[40rem] max-w-full w-full flex items-center justify-center ">
           <PinContainer
             title="/KPP Monitoring"
-            href="kpp-mining-exjr7pzne-faishals-projects-bab197b8.vercel.app/"
+            href="https://kpp-mining-exjr7pzne-faishals-projects-bab197b8.vercel.app/"
           >
             <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 max-w-full w-full">
               <div className="flex flex-1 rounded-lg w-full">
