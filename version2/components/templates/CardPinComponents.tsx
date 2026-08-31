@@ -58,7 +58,7 @@ export const projects = [
       "/images/postgresql-logo.png",
       "/images/docker.png",
     ],
-    link: "",
+    link: "http://43.173.8.161:3001/landing",
   },
   {
     id: 4,
