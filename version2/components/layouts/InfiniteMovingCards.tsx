@@ -2,10 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import React, { useEffect, useState } from "react";
-import { LampContainer } from "./lamp";
 import { motion } from "framer-motion";
-import { CardHoverComponents } from "../templates/CardHoverComponents";
-import { TextGenerateEffect } from "../templates/TextGenerateEffect";
 import Image from "next/image";
 
 const words = `Skill & Tech Stack`;

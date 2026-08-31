@@ -29,6 +29,9 @@ export const PinContainer = ({
   };
   
 
+  // href is a real URL. Do not build one by string concatenation.
+  const isExternal = !!href && /^https?:\/\//.test(href);
+
   return (
     <Link
       className={cn(
@@ -37,8 +40,10 @@ export const PinContainer = ({
       )}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      href={href && href !== "#" ? `https://${href}` : "#"}
-      prefetch={href && href !== "#" ? true : false}
+      href={href || "#"}
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
+      prefetch={false}
     >
       <div
         style={{
@@ -75,7 +80,6 @@ export const PinPerspective = ({
           {/* Changed Link to div */}
           <div
             className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10 cursor-pointer"
-            onClick={() => window.open(href || "#")} // Handle click manually
           >
             <span className="relative z-20 text-white text-xs font-bold inline-block py-0.5">
               {title}

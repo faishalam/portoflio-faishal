@@ -70,7 +70,7 @@ export const SparklesFont = ({
                 background="transparent"
                 minSize={0.4}
                 maxSize={1}
-                particleDensity={500}
+                particleDensity={200}
                 className="w-full h-full"
                 particleColor="#FFFFFF"
               />
@@ -78,7 +78,7 @@ export const SparklesFont = ({
                 background="transparent"
                 minSize={0.4}
                 maxSize={1}
-                particleDensity={500}
+                particleDensity={200}
                 className="w-full h-full"
                 particleColor="#FFFFFF"
               />

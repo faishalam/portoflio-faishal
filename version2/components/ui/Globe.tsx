@@ -247,7 +247,7 @@ export function World(props: WorldProps) {
   const scene = new Scene();
   scene.fog = new Fog(0xffffff, 400, 2000);
   return (
-    <div className="p-44 max-w-full w-full flex justify-center items-center h-screen">
+    <div className="p-4 sm:p-8 md:p-16 lg:p-32 max-w-full w-full flex justify-center items-center h-screen">
       <Canvas
         scene={scene}
         camera={new PerspectiveCamera(50, aspect, 180, 1800)}

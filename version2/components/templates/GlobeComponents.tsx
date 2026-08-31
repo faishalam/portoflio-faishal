@@ -1,6 +1,6 @@
 "use client";
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import dynamic from "next/dynamic";
 import { HoverBorderGradientDemo } from "./Button";
 
@@ -9,6 +9,11 @@ const World = dynamic(() => import("../ui/Globe").then((m) => m.World), {
 });
 
 export function GlobeDemo() {
+  // three.js + three-globe + globe.json is ~1MB of JS/data. Keep it off the
+  // wire until this section is actually near the viewport.
+  const globeRef = useRef<HTMLDivElement>(null);
+  const globeInView = useInView(globeRef, { margin: "300px", once: true });
+
   const globeConfig = {
     pointSize: 4,
     globeColor: "#062056",
@@ -397,7 +402,7 @@ export function GlobeDemo() {
 
   return (
     <>
-      <div className="max-w-full w-full flex flex-col md:flex-row h-screen">
+      <div className="max-w-full w-full flex flex-col md:flex-row min-h-screen">
         <div className="max-w-full w-full flex flex-col justify-center items-center">
           <motion.div
             initial={{
@@ -439,8 +444,8 @@ export function GlobeDemo() {
             </div>
           </motion.div>
         </div>
-        <div className="max-w-full w-full z-10 md:block hidden">
-          <World data={sampleArcs} globeConfig={globeConfig} />
+        <div ref={globeRef} className="max-w-full w-full z-10 md:block hidden">
+          {globeInView && <World data={sampleArcs} globeConfig={globeConfig} />}
         </div>
       </div>
     </>

@@ -1,8 +1,14 @@
 "use client";
 import React, { useState, useEffect, useRef, useCallback } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  useInView,
+  useMotionValue,
+  useTransform,
+} from "framer-motion";
+import Image from "next/image";
 import { IconDotsVertical } from "@tabler/icons-react";
-import { SparklesCore } from "./Sparkles";
 import { cn } from "@/lib/utils";
 
 interface CompareProps {
@@ -29,58 +35,49 @@ export const Compare = ({
   autoplay = false,
   autoplayDuration = 5000,
 }: CompareProps) => {
-  const [sliderXPercent, setSliderXPercent] = useState(initialSliderPercentage);
   const [isDragging, setIsDragging] = useState(false);
-
-  const sliderRef = useRef<HTMLDivElement>(null);
-
   const [isMouseOver, setIsMouseOver] = useState(false);
 
-  const autoplayRef = useRef<NodeJS.Timeout | null>(null);
+  const sliderRef = useRef<HTMLDivElement>(null);
+  // Only animate while on screen — the page mounts a dozen of these at once.
+  const inView = useInView(sliderRef, { margin: "200px" });
 
-  const startAutoplay = useCallback(() => {
-    if (!autoplay) return;
-
-    const startTime = Date.now();
-    const animate = () => {
-      const elapsedTime = Date.now() - startTime;
-      const progress =
-        (elapsedTime % (autoplayDuration * 2)) / autoplayDuration;
-      const percentage = progress <= 1 ? progress * 100 : (2 - progress) * 100;
-
-      setSliderXPercent(percentage);
-      autoplayRef.current = setTimeout(animate, 16); // ~60fps
-    };
-
-    animate();
-  }, [autoplay, autoplayDuration]);
-
-  const stopAutoplay = useCallback(() => {
-    if (autoplayRef.current) {
-      clearTimeout(autoplayRef.current);
-      autoplayRef.current = null;
-    }
-  }, []);
+  // MotionValue instead of state: framer writes straight to the DOM, so the
+  // autoplay loop never re-renders React.
+  const sliderXPercent = useMotionValue(initialSliderPercentage);
+  const dividerLeft = useTransform(sliderXPercent, (v) => `${v}%`);
+  const firstImageClip = useTransform(
+    sliderXPercent,
+    (v) => `inset(0 ${100 - v}% 0 0)`
+  );
 
   useEffect(() => {
-    startAutoplay();
-    return () => stopAutoplay();
-  }, [startAutoplay, stopAutoplay]);
+    if (!autoplay || !inView || isMouseOver) return;
+
+    let frame = 0;
+    const startTime = performance.now();
+    const animate = (now: number) => {
+      const progress = ((now - startTime) % (autoplayDuration * 2)) / autoplayDuration;
+      sliderXPercent.set(progress <= 1 ? progress * 100 : (2 - progress) * 100);
+      frame = requestAnimationFrame(animate);
+    };
+    frame = requestAnimationFrame(animate);
+
+    return () => cancelAnimationFrame(frame);
+  }, [autoplay, inView, isMouseOver, autoplayDuration, sliderXPercent]);
 
   function mouseEnterHandler() {
     setIsMouseOver(true);
-    stopAutoplay();
   }
 
   function mouseLeaveHandler() {
     setIsMouseOver(false);
     if (slideMode === "hover") {
-      setSliderXPercent(initialSliderPercentage);
+      sliderXPercent.set(initialSliderPercentage);
     }
     if (slideMode === "drag") {
       setIsDragging(false);
     }
-    startAutoplay();
   }
 
   const handleStart = useCallback(
@@ -105,12 +102,10 @@ export const Compare = ({
         const rect = sliderRef.current.getBoundingClientRect();
         const x = clientX - rect.left;
         const percent = (x / rect.width) * 100;
-        requestAnimationFrame(() => {
-          setSliderXPercent(Math.max(0, Math.min(100, percent)));
-        });
+        sliderXPercent.set(Math.max(0, Math.min(100, percent)));
       }
     },
-    [slideMode, isDragging]
+    [slideMode, isDragging, sliderXPercent]
   );
 
   const handleMouseDown = useCallback(
@@ -147,6 +142,8 @@ export const Compare = ({
     [handleMove, autoplay]
   );
 
+  const sizes = "(max-width: 768px) 270px, 500px";
+
   return (
     <div
       ref={sliderRef}
@@ -168,7 +165,7 @@ export const Compare = ({
         <motion.div
           className="h-full w-px absolute top-0 m-auto z-30 bg-gradient-to-b from-transparent from-[5%] to-[95%] via-indigo-500 to-transparent"
           style={{
-            left: `${sliderXPercent}%`,
+            left: dividerLeft,
             top: "0",
             zIndex: 40,
           }}
@@ -176,16 +173,6 @@ export const Compare = ({
         >
           <div className="w-36 h-full [mask-image:radial-gradient(100px_at_left,white,transparent)] absolute top-1/2 -translate-y-1/2 left-0 bg-gradient-to-r from-indigo-400 via-transparent to-transparent z-20 opacity-50" />
           <div className="w-10 h-1/2 [mask-image:radial-gradient(50px_at_left,white,transparent)] absolute top-1/2 -translate-y-1/2 left-0 bg-gradient-to-r from-cyan-400 via-transparent to-transparent z-10 opacity-100" />
-          <div className="w-10 h-3/4 top-1/2 -translate-y-1/2 absolute -right-10 [mask-image:radial-gradient(100px_at_left,white,transparent)]">
-            <MemoizedSparklesCore
-              background="transparent"
-              minSize={0.4}
-              maxSize={1}
-              particleDensity={1200}
-              className="w-full h-full"
-              particleColor="#FFFFFF"
-            />
-          </div>
           {showHandlebar && (
             <div className="h-5 w-5 rounded-md top-1/2 -translate-y-1/2 bg-white z-30 -right-2.5 absolute   flex items-center justify-center shadow-[0px_-1px_0px_0px_#FFFFFF40]">
               <IconDotsVertical className="h-4 w-4 text-black" />
@@ -202,15 +189,18 @@ export const Compare = ({
                 firstImageClassName
               )}
               style={{
-                clipPath: `inset(0 ${100 - sliderXPercent}% 0 0)`,
+                clipPath: firstImageClip,
               }}
               transition={{ duration: 0 }}
             >
-              <img
+              <Image
                 alt="first image"
                 src={firstImage}
+                fill
+                sizes={sizes}
+                loading="lazy"
                 className={cn(
-                  "absolute inset-0  z-20 rounded-2xl flex-shrink-0 w-full h-full select-none",
+                  "z-20 rounded-2xl select-none object-cover",
                   firstImageClassName
                 )}
                 draggable={false}
@@ -220,21 +210,20 @@ export const Compare = ({
         </AnimatePresence>
       </div>
 
-      <AnimatePresence initial={false}>
-        {secondImage ? (
-          <motion.img
-            className={cn(
-              "absolute top-0 left-0 z-[19]  rounded-2xl w-full h-full select-none",
-              secondImageClassname
-            )}
-            alt="second image"
-            src={secondImage}
-            draggable={false}
-          />
-        ) : null}
-      </AnimatePresence>
+      {secondImage ? (
+        <Image
+          className={cn(
+            "absolute top-0 left-0 z-[19] rounded-2xl select-none object-cover",
+            secondImageClassname
+          )}
+          alt="second image"
+          src={secondImage}
+          fill
+          sizes={sizes}
+          loading="lazy"
+          draggable={false}
+        />
+      ) : null}
     </div>
   );
 };
-
-const MemoizedSparklesCore = React.memo(SparklesCore);

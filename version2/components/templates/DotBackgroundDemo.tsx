@@ -56,19 +56,19 @@ export function DotBackgroundDemo() {
   return (
     <div className="w-full flex-col bg-black bg-dot-white/[0.2] relative flex items-center justify-center">
       <div className="max-w-7xl mx-auto w-full h-full md:h-screen flex justify-center items-center">
-        <div className="max-w-full w-full flex flex-col px-10 md:px-0 justify-center items-center">
+        <div className="max-w-full w-full flex flex-col px-4 sm:px-6 md:px-0 justify-center items-center">
           <div className="text-4xl md:text-4xl lg:text-5xl flex flex-col w-full font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 mt-20 mb-20">
             <p>About Me</p>
           </div>
           <Paragraph
-            value={`As a recent graduate from the Full Stack JavaScript Immersive program at Hacktiv8 Indonesia, I bring a strong skill set in web and mobile development, with expertise in React JS, Next JS, TypeScript, Redux, React Query, Node, Express, Sequelize, PostgreSQL, Mongo and etc. Alongside my formal education, I have practical experience as a Frontend Developer, where I contributed to build projects by developing responsive, user-friendly interfaces and optimizing performance. I am eager to apply my skills to innovative projects, staying updated with the latest technologies, and growing as a Full Stack Developer to create efficient and scalable applications.`}
+            value={`I am a Full Stack Engineer building scalable SaaS and enterprise applications, with a track record of taking products from an empty repository to production. At POSDIGI I built an e-Contract platform from scratch and integrated Privy e-Sign and e-Meterai, then designed and shipped an API Marketplace end to end covering system design, database, frontend, backend, and deployment. I work mainly with Next.js, TypeScript, and React Query on the frontend, NestJS and Go with PostgreSQL on the backend, and I own the delivery pipeline myself using Docker, Jenkins, and self-managed VPS infrastructure.`}
             firstOffset={offsets.firstOffset}
             secondOffset={offsets.secondOffset}
           />
         </div>
       </div>
 
-      <div className="flex flex-col lg:flex-row w-full justify-center items-center gap-10 max-w-7xl mt-20 h-full md:h-screen px-10 md:px-0">
+      <div className="flex flex-col lg:flex-row w-full justify-center items-center gap-10 max-w-7xl mt-20 h-full md:h-screen px-4 sm:px-6 md:px-0">
         <div className="flex flex-col justify-start items-start max-w-full w-full md:gap-20 sm:gap-10">
           <TextRevealCardComponents />
           <CompareComponents />
@@ -80,7 +80,7 @@ export function DotBackgroundDemo() {
         <TimelineDemo />
       </div>
 
-      <div className="md:h-screen h-full max-w-full rounded-md flex flex-col antialiased items-center relative overflow-hidden">
+      <div className="cv-section md:h-screen h-full max-w-full rounded-md flex flex-col antialiased items-center relative overflow-hidden">
         <div className="flex flex-col max-w-full w-full justify-center items-center py-10 md:gap-24">
           <TextGenerateEffect words={"Skills & Tech Stack"} />
           <CardHoverComponents />
@@ -99,7 +99,7 @@ export function DotBackgroundDemo() {
         </div>
       </div>
 
-      <div className="max-w-full w-full md:h-screen h-full flex justify-center items-center">
+      <div className="cv-section max-w-full w-full md:h-screen h-full flex justify-center items-center">
         <CardPinComponents />
       </div>
 
@@ -107,7 +107,7 @@ export function DotBackgroundDemo() {
         <StickyScrollComponents />
       </div>
 
-      <div className="max-w-full w-full h-screen">
+      <div className="max-w-full w-full">
         <GlobeDemo />
       </div>
     </div>

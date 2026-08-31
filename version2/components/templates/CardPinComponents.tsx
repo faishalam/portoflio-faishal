@@ -1,9 +1,9 @@
 "use client";
 
 import { FaLocationArrow } from "react-icons/fa6";
-import { CompareComponents } from "./CompareComponents";
 import { PinContainer } from "../layouts/CardPin";
 import { Compare } from "../layouts/Compare";
+import Image from "next/image";
 import Link from "next/link";
 
 export const projects = [
@@ -17,16 +17,69 @@ export const projects = [
     secondImage: "/images/e-contract-template.png",
     iconLists: [
       "/next.svg",
-      "/tail.svg",
       "/ts.svg",
-      "/vercel.svg",
-      "/javascript.svg",
-      "/aws-white.svg",
+      "/tail.svg",
+      "/images/docker.png",
+      "/images/jenkins.png",
+    ],
+    link: "https://econtract.posdigi.co.id",
+  },
+  {
+    id: 2,
+    title: "PT POSDIGI - API Marketplace",
+    des: "Self-service API marketplace with merchant portal, admin portal, CMS, and a sandbox for API testing.",
+    years: "Agustus 2025 - Present",
+    position: "Full Stack Engineer",
+    firstImage: "/images/api_marketplace_1.png",
+    secondImage: "/images/api_marketplace_2.png",
+    iconLists: [
+      "/next.svg",
+      "/ts.svg",
+      "/tail.svg",
+      "/images/postgresql-logo.png",
+      "/images/docker.png",
+      "/images/jenkins.png",
+    ],
+    link: "https://sandbox.posdigi.co.id",
+  },
+  {
+    id: 3,
+    title: "F&B Operational - SaaS",
+    des: "AI-powered operating system for coffee shop and F&B businesses: SOP and recipes, real-time inventory ledger, automatic HPP/COGS, POS, cash flow, and multi-outlet financial reporting.",
+    years: "2026 - Present",
+    position: "Full Stack Engineer",
+    firstImage: "/images/fnb_1.png",
+    secondImage: "/images/fnb_2.png",
+    iconLists: [
+      "/next.svg",
+      "/ts.svg",
+      "/tail.svg",
+      "/go-logo.png",
+      "/images/postgresql-logo.png",
+      "/images/docker.png",
     ],
     link: "",
   },
   {
-    id: 2,
+    id: 4,
+    title: "Talentcore Esports - Freelance",
+    des: "CMS and company profile to manage and showcase esports talents, with booking and scheduling for game house training and facility reservation.",
+    years: "April 2026 - Juni 2026",
+    position: "Full Stack Engineer",
+    firstImage: "/images/talentcore_1.png",
+    secondImage: "/images/talentcore_2.png",
+    iconLists: [
+      "/next.svg",
+      "/ts.svg",
+      "/tail.svg",
+      "/images/postgresql-logo.png",
+      "/images/docker.png",
+      "/images/jenkins.png",
+    ],
+    link: "https://talentcore.id/home",
+  },
+  {
+    id: 5,
     title: "PT Kalimantan Prima Persada (KPP Mining)",
     des: "Web application for managing Berita Acara, Debit Notes, and Invoices.",
     years: "September 2025 - December 2025",
@@ -41,10 +94,10 @@ export const projects = [
       "/javascript.svg",
       "/aws-white.svg",
     ],
-    link: "/https://ba-management.vercel.app/login",
+    link: "https://ba-management.vercel.app/login",
   },
   {
-    id: 3,
+    id: 6,
     title: "PT Kalimantan Prima Persada (KPP Mining)",
     des: "Web application for managing Stock Inventory, Purchase Orders, and Supplier Data.",
     years: "September 2025 - December 2025",
@@ -58,10 +111,10 @@ export const projects = [
       "/javascript.svg",
       "/aws-white.svg",
     ],
-    link: "/https://stock-management-kpp.vercel.app/login",
+    link: "https://stock-management-kpp.vercel.app/login",
   },
   {
-    id: 4,
+    id: 7,
     title: "PT Kalimantan Prima Persada (KPP Mining)",
     des: "Build Web App to monitor and manage assets, approvals, and overdue reminders, streamlining asset management processes and improving data accuracy.",
     years: "April 2024 - Present",
@@ -76,47 +129,10 @@ export const projects = [
       "/javascript.svg",
       "/aws-white.svg",
     ],
-    link: "/kpp-mining-exjr7pzne-faishals-projects-bab197b8.vercel.app/",
+    link: "https://kpp-mining-exjr7pzne-faishals-projects-bab197b8.vercel.app/",
   },
   {
-    id: 5,
-    title: "Chatting App - Individual Project",
-    des: "A full stack real time chatting app using Ruby on Rails and Next JS",
-    years: "November 2024",
-    position: "Full Stack Engineer",
-    firstImage: "/images/chat-auth.png",
-    secondImage: "/images/chat-dashboard.png",
-    iconLists: [
-      "/next.svg",
-      "/tail.svg",
-      "/ts.svg",
-      "/vercel.svg",
-      "/ruby.svg",
-      "/aws-white.svg",
-      "/rails.svg",
-    ],
-    link: "/chat-app-fullstack-mu.vercel.app/login",
-  },
-  {
-    id: 6,
-    title: "Weather App - Individual Project",
-    des: "A full stack weather app and forecasting app using Next JS",
-    years: "October 2024",
-    position: "Frontend Engineer",
-    firstImage: "/images/weather-dark.png",
-    secondImage: "/images/weather-white.png",
-    iconLists: [
-      "/next.svg",
-      "/tail.svg",
-      "/ts.svg",
-      "/vercel.svg",
-      "/javascript.svg",
-      "/aws-white.svg",
-    ],
-    link: "/weather-app-dun-sigma-55.vercel.app/",
-  },
-  {
-    id: 7,
+    id: 8,
     title: "Fashion E-commerce - Individual Project",
     des: "A full stack fashion e-commerce app end to end user payments using midtrans",
     years: "March 2024 - April 2024",
@@ -125,7 +141,7 @@ export const projects = [
     secondImage: "/images/fashion-list.png",
     img: "/p4.svg",
     iconLists: ["/react.svg", "/tail.svg", "/javascript.svg"],
-    link: "/drive.google.com/file/d/1CEzk4PqUGw_PoHGG0psAmaLJvZa5fU8N/view",
+    link: "https://drive.google.com/file/d/1CEzk4PqUGw_PoHGG0psAmaLJvZa5fU8N/view",
   },
 ];
 
@@ -137,14 +153,14 @@ export default function CardPinComponents() {
           Recent Project
         </h1>
       </div>
-      <div className="max-w-full w-full flex h-full gap-10 sm:gap-16 overflow-auto p-10 space-x-56 md:space-x-0">
+      <div className="max-w-full w-full flex h-full gap-6 sm:gap-16 overflow-x-auto p-4 sm:p-10">
         {projects.map((item) => (
           <div
-            className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[30vw] space-y-10 "
+            className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[85vw] shrink-0 space-y-10 "
             key={item.id}
           >
             <PinContainer title={item.title} href={item.link}>
-              <div className="relative flex items-center justify-center sm:w-96 w-[80vw] h-[20vh] lg:h-[30vh] mb-10">
+              <div className="relative flex items-center justify-center w-full sm:w-96 h-[20vh] lg:h-[30vh] mb-10">
                 <div
                   className="relative w-full h-full lg:rounded-3xl bg-white"
                   // style={{ backgroundColor: "#1F1F1F" }}
@@ -188,7 +204,14 @@ export default function CardPinComponents() {
                         transform: `translateX(-${5 * index + 2}px)`,
                       }}
                     >
-                      <img src={icon} alt="icon5" className="p-2" />
+                      <Image
+                        src={icon}
+                        alt="tech stack icon"
+                        width={40}
+                        height={40}
+                        sizes="40px"
+                        className="p-2 object-contain"
+                      />
                     </div>
                   ))}
                 </div>

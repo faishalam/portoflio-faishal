@@ -1,6 +1,6 @@
 "use client";
 import { useScroll, motion, useTransform } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 export type OffsetType =
   | "start 0"
@@ -35,10 +35,6 @@ export default function Paragraph({
   });
 
   const words = value.split(" ");
-
-  useEffect(() => {
-    scrollYProgress.on("change", (e) => console.log(e));
-  }, []);
 
   return (
     // <div className="max-w-full w-full px-14 py-12 bg-neutral-800 rounded-xl">

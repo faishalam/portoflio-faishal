@@ -1,23 +1,8 @@
 "use client";
 
-import { BackgroundBeams } from "@/components/layouts/BackgroundBeams";
 import { FlipWords } from "@/components/layouts/FlipWord";
-import { TimelineDemo } from "@/components/layouts/TimelineDemo";
 import { WavyBackground } from "@/components/layouts/WavyBackground";
-import Paragraph from "@/components/Paragraph";
-import { BackgroundBeamsDemo } from "@/components/templates/BackgroundBeamsComponents";
-import { BackgroundGradient } from "@/components/templates/BackgroundGradient";
-import CardPinComponents from "@/components/templates/CardPinComponents";
-import { CompareComponents } from "@/components/templates/CompareComponents";
 import { DotBackgroundDemo } from "@/components/templates/DotBackgroundDemo";
-import { GlobeDemo } from "@/components/templates/GlobeComponents";
-import { GridBackgroundDemo } from "@/components/templates/GridBackgroundComponents";
-import { LampComponents } from "@/components/templates/LampComponents";
-import { MovingCardsComponents } from "@/components/templates/MovingCardsComponents";
-import { StickyScrollComponents } from "@/components/templates/StickyScrollComponents";
-import { TextRevealCardComponents } from "@/components/templates/TextReveralCardComponents";
-import { WobbleCardComponents } from "@/components/templates/WobbleCardComponents";
-import { useEffect, useState } from "react";
 
 export default function Home() {
   const words = [
@@ -32,7 +17,7 @@ export default function Home() {
         <WavyBackground className="max-w-7xl mx-auto h-screen flex justify-center items-center">
           <div className="w-full flex flex-col justify-center items-center px-4 ">
             <div className="text-4xl md:text-6xl flex flex-col w-full justify-center items-center font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-              <p>Hi, I'm Faishal</p>
+              <p>Hi, I&apos;m Faishal</p>
               <FlipWords words={words} />
             </div>
           </div>
@@ -41,7 +26,7 @@ export default function Home() {
 
       <div className="max-w-full w-full mx-auto gap-10 flex justify-center items-center">
         <DotBackgroundDemo />
-      </div>       
+      </div>
     </>
   );
 }

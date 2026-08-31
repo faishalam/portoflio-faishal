@@ -1,8 +1,6 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import CardPinComponents from "./CardPinComponents";
-import { CardWorkExperience } from "./CardWorkExperience";
 import { PinContainer } from "../layouts/CardPin";
 import { Compare } from "../layouts/Compare";
 import { StickyScroll } from "../layouts/StickyScroll";
@@ -10,37 +8,107 @@ import { StickyScroll } from "../layouts/StickyScroll";
 const content = [
   {
     title: "PT POSDIGI Member of POS Indonesia",
-    position: "Software Engineer - Frontend",
+    position: "Full Stack Engineer - API Marketplace",
     years: "Agustus 2025 - Present",
     description:
-      "As a Frontend Engineer at POSDIGI, I developed the eContract POSDIGI web application to manage digital contracts for corporate clients.",
+      "An API Marketplace platform that lets merchants discover, test, and integrate APIs through a self-service portal. Built from scratch covering system design, database design, frontend, backend, and deployment.",
     points: (
       <div className="max-w-full w-full flex flex-col gap-3 mt-10">
         {[
           {
             label: "Technology",
             value:
-              "Directed the transition from PHP to React JS, enhancing application scalability, maintainability and clean code.",
+              "Next JS, TypeScript, Nest JS, PostgreSQL, Tailwind CSS.",
           },
           {
-            label: "UI Development",
+            label: "Scope",
             value:
-              "Built modular, responsive UI components with React.js, ensuring a seamless and consistent user experience.",
+              "Built Merchant Portal, Admin Portal, and CMS end to end, from system and database design through to release.",
           },
           {
-            label: "Collaboration",
+            label: "Features",
             value:
-              "Worked closely with backend developers and UI/UX designers to integrate APIs and meet design specifications.",
+              "API catalog, API key management, authentication and access control, plus a sandbox environment for API testing and integration validation.",
           },
           {
-            label: "Optimization",
+            label: "Developer Experience",
             value:
-              "Implemented performance enhancements, reducing load times and improving overall responsiveness.",
+              "Created API documentation and request simulation features to speed up developer onboarding.",
           },
           {
-            label: "Quality Assurance",
+            label: "Deployment",
             value:
-              "Conducted rigorous testing to ensure stability and reliability throughout the development process.",
+              "Owned deployment and CI/CD end to end using Docker, Nginx, Jenkins, and self-managed VPS infrastructure.",
+          },
+        ].map((field, index) => (
+          <div key={index} className="flex w-full max-w-fulll px-5">
+            <div className="w-full flex justify-between max-w-[140px] md:max-w-[150px]">
+              <span className="font-extrabold text-md">{field.label}</span>
+              <span className="font-extrabold text-md mr-2">:</span>
+            </div>
+            <div className="text-md max-w-full w-full">
+              <p className="max-w-full w-full">{field.value}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    ),
+    content: (
+      <div className="h-full max-w-full w-full flex items-center justify-center text-white">
+        <div className="h-[40rem] max-w-full w-full flex items-center justify-center ">
+          <PinContainer
+            title="PT POSDIGI - API Marketplace"
+            href="https://sandbox.posdigi.co.id"
+          >
+            <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 max-w-full w-full">
+              <div className="flex flex-1 rounded-lg w-full">
+                <Compare
+                  firstImage="/images/api_marketplace_1.png"
+                  secondImage="/images/api_marketplace_2.png"
+                  className="w-full h-[250px]"
+                  slideMode="hover"
+                  autoplay={true}
+                />
+              </div>
+            </div>
+          </PinContainer>
+        </div>
+      </div>
+    ),
+  },
+  {
+    title: "PT POSDIGI Member of POS Indonesia",
+    position: "Frontend Engineer - eContract",
+    years: "Agustus 2025 - Present",
+    description:
+      "A SaaS-based e-Contract platform that digitizes contract creation, approval, and signing for internal operations and external merchant partners, replacing manual paper-based workflows. Built from scratch, end to end on the frontend.",
+    points: (
+      <div className="max-w-full w-full flex flex-col gap-3 mt-10">
+        {[
+          {
+            label: "Technology",
+            value:
+              "Next JS 16, TypeScript, React Query, Context API, Tailwind CSS, MUI.",
+          },
+          {
+            label: "Architecture",
+            value:
+              "Built the application from scratch, owning end-to-end frontend development and architecture.",
+          },
+          {
+            label: "Integration",
+            value:
+              "Integrated Privy e-Sign and e-Meterai for secure, legally compliant digital signing and document validation.",
+          },
+          {
+            label: "Rich Text Editor",
+            value:
+              "Implemented a custom Tiptap editor supporting dynamic contract generation, reusable templates, and custom template configuration.",
+          },
+          {
+            label: "Deployment",
+            value:
+              "Supported CI/CD and deployment using Docker and Jenkins.",
           },
         ].map((field, index) => (
           <div key={index} className="flex w-full max-w-fulll px-5">
@@ -60,7 +128,7 @@ const content = [
         <div className="h-[40rem] max-w-full w-full flex items-center justify-center ">
           <PinContainer
             title="PT POSDIGI - eContract"
-            href="#"
+            href="https://econtract.posdigi.co.id"
           >
             <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 max-w-full w-full">
               <div className="flex flex-1 rounded-lg w-full">
@@ -69,7 +137,7 @@ const content = [
                   secondImage="/images/e-contract-template.png"
                   // firstImageClassName="object-cover object-left-top"
                   // secondImageClassname="object-cover object-left-top"
-                  className="h-[250px]"
+                  className="w-full h-[250px]"
                   slideMode="hover"
                   autoplay={true}
                 />
@@ -141,7 +209,7 @@ const content = [
                   secondImage="/images/ckb-inquiry.png"
                   // firstImageClassName="object-cover object-left-top"
                   // secondImageClassname="object-cover object-left-top"
-                  className="h-[250px]"
+                  className="w-full h-[250px]"
                   slideMode="hover"
                   autoplay={true}
                 />
@@ -213,7 +281,7 @@ const content = [
                   secondImage="/images/nmw-dashboard.png"
                   // firstImageClassName="object-cover object-left-top"
                   // secondImageClassname="object-cover object-left-top"
-                  className="h-[250px]"
+                  className="w-full h-[250px]"
                   slideMode="hover"
                   autoplay={true}
                 />
@@ -275,7 +343,7 @@ const content = [
       <div className="h-full max-w-full w-full  flex items-center justify-center text-white">
         <div className="h-[40rem] max-w-full w-full flex items-center justify-center ">
           <PinContainer
-            title="/KPP Monitoring"
+            title="KPP Monitoring"
             href="https://kpp-mining-exjr7pzne-faishals-projects-bab197b8.vercel.app/"
           >
             <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 max-w-full w-full">
@@ -285,7 +353,7 @@ const content = [
                   secondImage="/images/kpp-dashboard.png"
                   // firstImageClassName="object-cover object-left-top"
                   // secondImageClassname="object-cover object-left-top"
-                  className="h-[250px] w-[]"
+                  className="w-full h-[250px]"
                   slideMode="hover"
                   autoplay={true}
                 />

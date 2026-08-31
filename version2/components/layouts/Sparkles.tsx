@@ -1,10 +1,10 @@
 "use client";
-import React, { useId, useMemo } from "react";
+import React, { useId, useMemo, useRef } from "react";
 import { useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import type { Container, SingleOrMultiple } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim";
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation, useInView } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 type ParticlesProps = {
@@ -30,13 +30,18 @@ export const SparklesCore = (props: ParticlesProps) => {
     particleDensity,
   } = props;
   const [init, setInit] = useState(false);
+  // Don't boot a particle engine for a canvas nobody is looking at.
+  const hostRef = useRef<HTMLDivElement>(null);
+  const inView = useInView(hostRef, { margin: "200px" });
+
   useEffect(() => {
+    if (!inView || init) return;
     initParticlesEngine(async (engine) => {
       await loadSlim(engine);
     }).then(() => {
       setInit(true);
     });
-  }, []);
+  }, [inView, init]);
   const controls = useAnimation();
 
   const particlesLoaded = async (container?: Container) => {
@@ -52,8 +57,8 @@ export const SparklesCore = (props: ParticlesProps) => {
 
   const generatedId = useId();
   return (
-    <motion.div animate={controls} className={cn("opacity-0", className)}>
-      {init && (
+    <motion.div ref={hostRef} animate={controls} className={cn("opacity-0", className)}>
+      {init && inView && (
         <Particles
           id={id || generatedId}
           className={cn("h-full w-full")}
@@ -69,7 +74,7 @@ export const SparklesCore = (props: ParticlesProps) => {
               zIndex: 1,
             },
 
-            fpsLimit: 120,
+            fpsLimit: 60,
             interactivity: {
               events: {
                 onClick: {
@@ -425,7 +430,7 @@ export const SparklesCore = (props: ParticlesProps) => {
                 speed: 1,
               },
             },
-            detectRetina: true,
+            detectRetina: false,
           }}
         />
       )}

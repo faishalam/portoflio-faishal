@@ -1,5 +1,4 @@
 import React from "react";
-import apiCall from "../../../public/images/apiCall.png";
 import { Compare } from "../layouts/Compare";
 
 export function CompareComponents() {
@@ -10,7 +9,7 @@ export function CompareComponents() {
         secondImage="/images/context.png"
         // firstImageClassName="object-cover object-left-top"
         // secondImageClassname="object-cover object-left-top"
-        className="md:w-[500px] md:h-[400px] w-[270px] h-[200px]"
+        className="w-full max-w-[500px] h-[200px] sm:h-[300px] md:h-[400px]"
         slideMode="hover"
         autoplay={true}
       />

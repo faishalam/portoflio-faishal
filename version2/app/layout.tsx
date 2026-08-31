@@ -3,8 +3,6 @@ import { Inter } from "next/font/google";
 
 import "./globals.css";
 import { ThemeProvider } from "./provider";
-import CardPinComponents from "@/components/templates/CardPinComponents";
-import { BackgroundBeamsDemo } from "@/components/templates/BackgroundBeamsComponents";
 
 const inter = Inter({ subsets: ["latin"] });
 
